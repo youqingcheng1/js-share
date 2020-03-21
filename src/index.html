@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分享功能</title>
+</head>
+<body>
+    <div id="share">
+        
+    </div>
+
+    <script>
+        let heads = document.getElementsByTagName("head"); 
+        if(/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)){
+        let cssUrl = document.createElement("link");
+        cssUrl.setAttribute("rel", "stylesheet");
+        cssUrl.setAttribute("href","src/main.css");
+        document.documentElement.appendChild(cssUrl);
+        heads[0].appendChild(cssUrl);
+        } else {
+
+        }
+    </script>
+</body>
+</html>
