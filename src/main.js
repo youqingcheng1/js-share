@@ -5,18 +5,12 @@ function typeFn(){
         let scritUrl = document.createElement("script");
         let metaUrl = document.createElement("meta");
         let heads = document.getElementsByTagName("head"); 
-        // let cssUrl = document.createElement("link");
-        // cssUrl.setAttribute("rel", "stylesheet");
-        // cssUrl.setAttribute("href","src/main.css");
-        // cssUrl.setAttribute("type", "text/css")
         metaUrl.setAttribute("name", "viewport");
         metaUrl.setAttribute("content", "width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;");
         scritUrl.setAttribute("src", "//mnweb.mini1.cn/mnwbridge/miniwBridge-0.3.0-beta.js");
         scritUrl.setAttribute("type", "text/javascript");
         document.documentElement.appendChild(scritUrl); 
-        // document.documentElement.appendChild(cssUrl);
         if(heads.length){
-            // heads[0].appendChild(cssUrl);
             heads[0].appendChild(metaUrl);
         } else {
             document.documentElement.appendChild(metaUrl);
@@ -33,8 +27,6 @@ function typeFn(){
         }
     }
 }
-
-
 
 (function(){
     typeFn();

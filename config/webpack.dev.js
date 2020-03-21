@@ -1,14 +1,17 @@
 const path = require("path");
+const webpack = require("webpack");
 const htmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode:"development",
     entry:[
-        './src/main.js'
+        './src/main.js',
+        './src/main.css',
+        './src/index.html'
     ],
     output:{
-        path: path.resolve(__dirname, './src'),
-        filename: 'js/[name].js'
+        path: path.resolve(__dirname, 'src'),
+        filename: '[name].js'
     },
     devtool: 'inline-source-map',
     module:{
@@ -60,24 +63,23 @@ module.exports = {
                 test:/\.js$/,
                 loader:'babel-loader',
                 exclude:/node_modules/
-            }//ES6转ES5
+            },//ES6转ES5
         ]
     },
     plugins:[
         new htmlPlugin({
-            chunks: 'main',
             filename: 'index.html',
-            template: 'src/index.html'
+            template: './src/index.html'
         })
     ],
     devServer:{
-        contentBase: path.join(__dirname, 'src'),
+        contentBase: './src',
         host: 'localhost',
         hot: true,
         inline: true,
         compress: true,//一切服务都启用 gzip 压缩
         open: true,
-        port: 1212
+        port: 1212,
     },
     watchOptions: {
         ignored: /node_modules/
